@@ -1,0 +1,3 @@
+#!/bin/sh
+cd ~/src/liteos
+stm32flash -w out/GD32F303RGT6_BearPi/Huawei_LiteOS.hex /dev/ttyUSB0 

@@ -1,0 +1,28 @@
+diff --git a/targets/GD32F303RGT6_BearPi/Src/gpio.c b/targets/GD32F303RGT6_BearPi/Src/gpio.c
+index 2630c1a0..ae94f58b 100644
+--- a/targets/GD32F303RGT6_BearPi/Src/gpio.c
++++ b/targets/GD32F303RGT6_BearPi/Src/gpio.c
+@@ -32,6 +32,6 @@
+ VOID GpioInit(VOID)
+ {
+     rcu_periph_clock_enable(RCU_GPIOB);
+-    gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_0);
+-    gpio_bit_reset(GPIOB, GPIO_PIN_0);
+-}
+\ No newline at end of file
++    gpio_init(GPIOB, GPIO_MODE_OUT_PP, GPIO_OSPEED_50MHZ, GPIO_PIN_2);
++    gpio_bit_reset(GPIOB, GPIO_PIN_2);
++}
+diff --git a/targets/GD32F303RGT6_BearPi/Src/user_task.c b/targets/GD32F303RGT6_BearPi/Src/user_task.c
+index 7d0dca2f..2fca3da9 100644
+--- a/targets/GD32F303RGT6_BearPi/Src/user_task.c
++++ b/targets/GD32F303RGT6_BearPi/Src/user_task.c
+@@ -35,7 +35,7 @@ STATIC UINT32 g_ledTaskId;
+ STATIC UINT32 LedInit(VOID)
+ {
+     while (1) {
+-        gpio_bit_toggle(GPIOB, GPIO_PIN_0);
++        gpio_bit_toggle(GPIOB, GPIO_PIN_2);
+         LOS_TaskDelay(TASK_DELAY);
+     }
+     return 0;

@@ -1,0 +1,12 @@
+diff --git a/Makefile b/Makefile
+index bbc1efcf..54bcd7af 100644
+--- a/Makefile
++++ b/Makefile
+@@ -81,6 +81,7 @@ else
+ endif
+ endif
+ 	$(OBJCOPY) -O binary $(OUT)/$@.elf $(OUT)/$@.bin
++	$(OBJCOPY) -O ihex $(OUT)/$@.elf $(OUT)/$@.hex
+ 	$(OBJDUMP) -t $(OUT)/$@.elf |sort >$(OUT)/$@.sym.sorted
+ 	$(OBJDUMP) -d $(OUT)/$@.elf >$(OUT)/$@.asm
+ 	$(SIZE) $(OUT)/$@.elf
