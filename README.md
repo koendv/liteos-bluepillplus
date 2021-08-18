@@ -4,11 +4,24 @@ This is a build of Huawei LiteOS 5.1.0 for GD32F303 on [WeAct BluePill Plus](htt
 
 ##
 
-Download pre-built binaries from "releases"
+Download pre-built binaries from [releases](../../releases)
 
 ## Patches
 
 Patches are relative to  [Huawei Liteos](https://gitee.com/LiteOS/LiteOS)
+
+Do a ``make menuconfig``, set *target family* to *GD*, *target* to *GD32F303RGT6_BearPi*. 
+
+```
+(Top) → Targets
+                          Huawei LiteOS Configuration
+    Family (GD)  --->
+    Target (GD32F303RGT6_BearPi)  --->
+[ ] Qspi peripherals
+[*] Enable Floating Pointer Unit
+[*] Enable Access Permission Control
+[ ] Enable Flash Patch
+```
 
 ### Makefile
 Create binaries in intel hex format.
