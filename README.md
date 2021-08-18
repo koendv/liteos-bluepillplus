@@ -39,6 +39,10 @@ GD32F303RGT6_BearPi has a LED on pin PB0, WeAct BluePill Plus has a LED on pin P
 
 [WeActBluePillPlus.patch](WeActBluePillPlus.patch)
 
+### usb device
+
+The GD32F303 usb hardware seems register-compatible with STM32F103. The usb stack used is [libusb_stm32](https://github.com/dmitrystu/libusb_stm32), configured for STM32F103.
+
 ## Compiling
 
 Huawei LiteOS 5.1.0 was compiled using gcc-9.4.0 and [gcc-arm-none-eabi-9-2020-q2-update](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads/9-2020-q2-update):
