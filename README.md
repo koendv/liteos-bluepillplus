@@ -1,12 +1,21 @@
 # Huawei LiteOS - WeAct BluePill Plus
 
-This is a build of Huawei LiteOS 5.1.0 for GD32F303 on [WeAct BluePill Plus](https://github.com/weacttc/bluepill-plus) .
+This is a build of Huawei LiteOS 5.1.0 for GD32F303 on [WeAct BluePill Plus](https://github.com/weacttc/bluepill-plus) . The demo does the following:
 
-##
+- the led blinks
+- the Huawei LiteOS console is on serial0 (PA9/PA10)
+- the usb cdc serial port echoes back all characters 
+- the usb hid device moves the mouse in small circles
 
-Download pre-built binaries from [releases](../../releases)
+## Installation
 
-## Patches
+Download pre-built binaries from [releases](../../releases), boot in DFU mode, connect a usb-serial adapter to pin PA9/PA10 and install using
+
+```
+stm32flash -w Huawei_LiteOS.hex /dev/ttyUSB0
+```
+
+## Developer notes
 
 Patches are relative to  [Huawei Liteos](https://gitee.com/LiteOS/LiteOS)
 
@@ -41,7 +50,7 @@ GD32F303RGT6_BearPi has a LED on pin PB0, WeAct BluePill Plus has a LED on pin P
 
 ### usb device
 
-The GD32F303 usb hardware seems register-compatible with STM32F103. The usb stack used is [libusb_stm32](https://github.com/dmitrystu/libusb_stm32), configured for STM32F103.
+The GD32F303 usb hardware seems register-compatible with STM32F103. The usb stack used is [libusb_stm32](https://github.com/dmitrystu/libusb_stm32), configuration is same as for STM32F103.
 
 ## Compiling
 
