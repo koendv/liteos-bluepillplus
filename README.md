@@ -2,10 +2,25 @@
 
 This is a build of Huawei LiteOS 5.1.0 for GD32F303 on [WeAct BluePill Plus](https://github.com/weacttc/bluepill-plus) . The demo does the following:
 
-- the led blinks
-- the Huawei LiteOS console is on serial0 (PA9/PA10)
-- the usb cdc serial port echoes back all characters 
-- the usb hid device moves the mouse in small circles
+- led blinks
+- usb cdc serial port echoes back all characters 
+- usb hid device moves the mouse in small circles
+- Huawei LiteOS console on serial0 (PA9/PA10)
+
+```
+********Hello Huawei LiteOS********
+
+LiteOS Kernel Version : 5.1.0
+build data : Aug 17 2021 10:35:22
+
+**********************************
+OsAppInit
+cpu 0 entering scheduler
+app init!
+Hello, welcome to liteos demo!
+
+Huawei LiteOS # 
+```
 
 ## Installation
 
@@ -50,7 +65,9 @@ GD32F303RGT6_BearPi has a LED on pin PB0, WeAct BluePill Plus has a LED on pin P
 
 ### usb device
 
-The GD32F303 usb hardware seems register-compatible with STM32F103. The usb stack used is [libusb_stm32](https://github.com/dmitrystu/libusb_stm32), configuration is same as for STM32F103.
+The GD32F303 usb hardware seems register-compatible with STM32F103. The usb stack used is [libusb_stm32](https://github.com/dmitrystu/libusb_stm32), configuration is same as for STM32F103. 
+
+[libusb_stm32](https://github.com/dmitrystu/libusb_stm32) is a device-only usb stack for stm32 arm, optimized for speed and size. Compare with [Ha thach tinyusb](https://github.com/hathach/tinyusb).
 
 ## Compiling
 
@@ -84,19 +101,6 @@ Download the intel hex file via DFU. On linux:
 
 Reboot and you should have the LiteOS prompt on the serial port.
 
-```
-********Hello Huawei LiteOS********
 
-LiteOS Kernel Version : 5.1.0
-build data : Aug 17 2021 10:35:22
-
-**********************************
-OsAppInit
-cpu 0 entering scheduler
-app init!
-Hello, welcome to liteos demo!
-
-Huawei LiteOS # 
-```
 
 not truncated
